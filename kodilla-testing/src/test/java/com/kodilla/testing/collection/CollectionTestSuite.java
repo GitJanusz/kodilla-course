@@ -20,12 +20,13 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminationEmptyList() {
         //Given
-        OddNumbersExterminator createEmptyList = new OddNumbersExterminator();
+        OddNumbersExterminator testOne = new OddNumbersExterminator();
         //When
         List<Integer> emptyList = new ArrayList<>();
-        List<Integer> result = createEmptyList.exterminate(emptyList);
+        List<Integer> normalList = new ArrayList<>();
+        List<Integer> result = testOne.exterminate(emptyList);
         //Then
-        Assertions.assertEquals(emptyList, result);
+        Assertions.assertEquals(normalList, result);
     }
     @DisplayName("when create normal list with numbers, " +
                  "then ArrayList should return only even numbers"
@@ -33,8 +34,13 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminationNormalList() {
         //Given
-        OddNumbersExterminator createNormalList = new OddNumbersExterminator();
+        OddNumbersExterminator testTwo = new OddNumbersExterminator();
         //When
+        List<Integer> oddNumbers = new ArrayList<>();
+        oddNumbers.add(2);
+        oddNumbers.add(4);
+        oddNumbers.add(6);
+
         List<Integer> normalList = new ArrayList<>();
         normalList.add(1);
         normalList.add(2);
@@ -42,8 +48,9 @@ public class CollectionTestSuite {
         normalList.add(4);
         normalList.add(5);
         normalList.add(6);
-        List<Integer> result = createNormalList.exterminate(normalList);
+
+        List<Integer> result = testTwo.exterminate(normalList);
         //Then
-        Assertions.assertEquals(normalList, result);
+        Assertions.assertEquals(oddNumbers, result);
     }
 }

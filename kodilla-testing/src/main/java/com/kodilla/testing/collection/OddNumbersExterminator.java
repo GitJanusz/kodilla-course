@@ -6,13 +6,13 @@ import java.util.List;
 public class OddNumbersExterminator {
 
     public List<Integer> exterminate(List<Integer> numbers) {
-        int number = 0;
-        for (int n=0; n<numbers.size(); n++) {
-            number = numbers.get(n);
+
+        List<Integer> evenNumbers = new ArrayList<>();
+        for (int number: numbers) {
             if (number % 2 == 0) {
-                System.out.println(number);
+                evenNumbers.add(number);
             }
         }
-        return numbers;
+        return evenNumbers;
     }
 }
