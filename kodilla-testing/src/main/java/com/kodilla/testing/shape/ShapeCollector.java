@@ -16,7 +16,10 @@ public class ShapeCollector {
     }
 
     public Shape getFigure(int n) {
-        return shapeList.get(n);
+        for (n=0; n<shapeList.size(); n++) {
+            return shapeList.get(n);
+        }
+        return null;
     }
 
     public Shape showFigures(Shape circle) {
