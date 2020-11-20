@@ -9,6 +9,7 @@ import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BooleanSupplier;
 
 @DisplayName("TDD: Shape Collector Test Suite")
 public class ShapeCollectorTestSuite {
@@ -68,18 +69,45 @@ public class ShapeCollectorTestSuite {
             Assertions.assertEquals(0, collector.getQuantityFigures());
         }
 
-        @Test
-        void testGetFigure() {
-            //Given
-            Shape circle = new Circle("circle", 21);
-            ShapeCollector collector = new ShapeCollector();
-            collector.addFigure(circle);
+        @Nested
+        class testGetFigure {
+            @Test
+            void testGetFigureWithPlusIndex() {
+                //Given
+                Shape circle = new Circle("circle", 21);
+                ShapeCollector collector = new ShapeCollector();
+                collector.addFigure(circle);
 
-            //When
-            Shape result = collector.getFigure(0);
+                //When
+                Shape result = collector.getFigure(0);
 
-            //Then
-            Assertions.assertEquals(result, circle);
+                //Then
+                Assertions.assertEquals(circle, result);
+            }
+
+            @Test
+            void testGetFigureWithMinusIndex() {
+                //Given
+                ShapeCollector collector = new ShapeCollector();
+
+                //When
+                Shape result = collector.getFigure(-1);
+
+                //Then
+                Assertions.assertEquals(-1, result);
+            }
+
+            @Test
+            void testGetFigureWithLargeIndex() {
+                //Given
+                ShapeCollector collector = new ShapeCollector();
+
+                //When
+                Shape result = collector.getFigure(234);
+
+                //Then
+                Assertions.assertEquals(234, result);
+            }
         }
 
         @Test
@@ -93,7 +121,7 @@ public class ShapeCollectorTestSuite {
             Shape result = collector.showFigures(circle);
 
             //Then
-            Assertions.assertEquals(result, circle);
+            Assertions.assertEquals(circle, result);
         }
     }
 }
