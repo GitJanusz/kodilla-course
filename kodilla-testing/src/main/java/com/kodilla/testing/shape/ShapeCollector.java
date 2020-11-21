@@ -16,14 +16,15 @@ public class ShapeCollector {
     }
 
     public Shape getFigure(int n) {
-        for (n=0; n<shapeList.size(); n++) {
+        if ( n >= 0 && n < shapeList.size()) {
             return shapeList.get(n);
+        } else {
+            return null;
         }
-        return null;
     }
 
     public Shape showFigures(Shape circle) {
-        for (Shape shape : shapeList) {
+        for (Shape shape: shapeList) {
             return shape;
         }
         return null;
