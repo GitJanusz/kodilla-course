@@ -1,11 +1,24 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.beautifier.PoemDecorator;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
+
+import javax.swing.text.DefaultEditorKit;
+import java.util.*;
 
 public class StreamMain {
 
     public static void main(String[] args) {
+
+        PoemBeautifier decorate = new PoemBeautifier();
+        decorate.beautify(() -> System.out.println("text to upper case".toUpperCase()));
+        decorate.beautify(() -> System.out.println("TEXT TO LOWER CASE".toLowerCase()));
+        decorate.beautify(() -> System.out.println("Text change - No".replace("No", "Yes")));
+        decorate.beautify(() -> System.out.println("Text co".concat("mbine")));
+        decorate.beautify(() -> System.out.println("         Delete whitespace".trim()));
+
         Processor processor = new Processor();
         Executor codeToExecute = () -> System.out.println("This is an example text.");
         processor.execute(codeToExecute);
