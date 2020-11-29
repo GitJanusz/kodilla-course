@@ -40,17 +40,7 @@ public final class TaskList {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof TaskList)) return false;
-
         TaskList taskList = (TaskList) o;
-
-        if (!getTasks().equals(taskList.getTasks())) return false;
         return getName().equals(taskList.getName());
-    }
-
-    @Override
-    public int hashCode() {
-        int result = getTasks().hashCode();
-        result = 31 * result + getName().hashCode();
-        return result;
     }
 }
