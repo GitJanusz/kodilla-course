@@ -34,10 +34,9 @@ public class ArrayOperationsTestSuite {
         number[19] = 3;
 
         //When
-        OptionalDouble arrayAverage = ArrayOperations.getAverage(number);
+        double arrayAverage = ArrayOperations.getAverage(number);
 
         //Then
-        OptionalDouble expected = OptionalDouble.of(5.55);
-        assertEquals(expected, arrayAverage);
+        assertEquals(5.55, arrayAverage, 0);
     }
 }
