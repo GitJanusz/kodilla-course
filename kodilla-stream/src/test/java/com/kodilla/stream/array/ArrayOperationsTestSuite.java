@@ -39,4 +39,16 @@ public class ArrayOperationsTestSuite {
         //Then
         assertEquals(5.55, arrayAverage, 0);
     }
+
+    @Test
+    public void testArrayEmpty() {
+        //Given
+        int[] arrayEmpty = {};
+
+        //When
+        double arrayAverage = ArrayOperations.getAverage(arrayEmpty);
+
+        //Then
+        assertEquals(0, arrayAverage, 0);
+    }
 }
