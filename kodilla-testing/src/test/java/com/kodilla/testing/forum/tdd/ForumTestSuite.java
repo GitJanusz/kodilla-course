@@ -53,8 +53,7 @@ public class ForumTestSuite {
             forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
 
             //When
-            ForumPost retrievedPost;
-            retrievedPost = forumUser.getPost(0);
+            ForumPost retrievedPost = forumUser.getPost(0);
 
             //Then
             Assertions.assertEquals(thePost, retrievedPost);
@@ -117,9 +116,9 @@ public class ForumTestSuite {
             ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
             ForumPost thePost = new ForumPost("Hello everyone, " +
                     "this is my first contribution here!", "mrsmith");
-            ForumComment theComment = new ForumComment(thePost, "Thank you for all good words!",
-                    "mrsmith");
-            forumUser.addComment(thePost, theComment.getCommentBody(), theComment.getAuthor());
+            ForumComment theComment = new ForumComment(thePost,
+                    "Thank you for all good words!", "mrsmith");
+            forumUser.addComment(thePost, theComment.getAuthor(), theComment.getCommentBody());
 
             //When
             ForumComment retrievedComment = forumUser.getComment(0);
