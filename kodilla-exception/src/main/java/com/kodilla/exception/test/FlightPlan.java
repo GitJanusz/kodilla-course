@@ -7,17 +7,29 @@ public class FlightPlan {
 
     Map<String, Boolean> airport = new HashMap<>();
 
-    public void addFlight(Flight flight) {
-        airport.put(flight.getArrivalAirport(), true);
-        airport.put(flight.getDepartureAirport(), true);
+    public FlightPlan() {
+        airport.put("Tokyo Haneda Airport", true);
+        airport.put("London Heathrow Airport", true);
+        airport.put("Tokio Haneda", true);
+        airport.put("Amsterdam Airport Schiphol", true);
+        airport.put("Charles de Gaulle Airport", true);
+        airport.put("O'Hare International Airport", true);
+        airport.put("San Francisco International Airport", false);
+        airport.put("McCarran International Airport", false);
+        airport.put("Barcelona–El Prat Airport", false);
     }
 
-    public void findFlight(String airportSearch) throws RouteNotFoundException {
+    public void findFlight(Flight flight) throws RouteNotFoundException {
 
-        if (!airport.containsKey(airportSearch)) {
-            throw new RouteNotFoundException("Airport not found \"" + airportSearch + "\"");
+        if (!airport.containsKey(flight.getDepartureAirport())
+                && !airport.containsKey(flight.getArrivalAirport())) {
+            throw new RouteNotFoundException("Flight not found");
+        } else if (!airport.containsKey(flight.getDepartureAirport())) {
+            throw new RouteNotFoundException("Change departure airport");
+        } else if (!airport.containsKey(flight.getArrivalAirport())) {
+            throw new RouteNotFoundException("Change arrival airport");
         } else {
-            System.out.println("\"" + airportSearch + "\" airport is on the flights plan");
+            System.out.println("Flight found!");
         }
     }
 }
