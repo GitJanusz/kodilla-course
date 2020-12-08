@@ -1,5 +1,8 @@
 package com.kodilla.exception.test;
 
+import com.sun.jdi.BooleanValue;
+import com.sun.jdi.Value;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,9 +27,7 @@ public class FlightPlan {
         if (!airport.containsKey(flight.getDepartureAirport())
                 && !airport.containsKey(flight.getArrivalAirport())) {
             throw new RouteNotFoundException("Flight not found");
-        } else if (!airport.containsKey(flight.getDepartureAirport())) {
-            throw new RouteNotFoundException("Change departure airport");
-        } else if (!airport.containsKey(flight.getArrivalAirport())) {
+        } else if (!airport.get(flight.getArrivalAirport())) {
             throw new RouteNotFoundException("Change arrival airport");
         } else {
             System.out.println("Flight found!");
