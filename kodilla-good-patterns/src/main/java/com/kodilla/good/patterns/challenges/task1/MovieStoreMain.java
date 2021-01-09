@@ -1,4 +1,6 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.task1;
+
+import com.kodilla.good.patterns.challenges.task1.MovieStore;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
