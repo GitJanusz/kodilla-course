@@ -4,8 +4,8 @@ import java.time.LocalDateTime;
 
 public class Order {
 
-    public int orderNumber;
-    public LocalDateTime date;
+    private int orderNumber;
+    private LocalDateTime date;
 
     public Order(int orderNumber, LocalDateTime date) {
         this.orderNumber = orderNumber;

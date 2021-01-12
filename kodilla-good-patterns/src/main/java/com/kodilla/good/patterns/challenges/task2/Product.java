@@ -2,9 +2,9 @@ package com.kodilla.good.patterns.challenges.task2;
 
 public class Product {
 
-    public String name;
-    public int amount;
-    public double price;
+    private String name;
+    private int amount;
+    private double price;
 
     public Product(String name, double price, int amount) {
         this.name = name;

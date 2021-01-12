@@ -2,8 +2,8 @@ package com.kodilla.good.patterns.challenges.task2;
 
 public class User {
 
-    public String name;
-    public String surname;
+    private String name;
+    private String surname;
 
     public User(String name, String surname) {
         this.name = name;
