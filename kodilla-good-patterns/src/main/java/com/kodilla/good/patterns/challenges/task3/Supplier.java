@@ -1,20 +1,22 @@
 package com.kodilla.good.patterns.challenges.task3;
 
+import java.util.List;
+
 public class Supplier {
 
     private String name;
-    private Product product;
+    private List<Product> productList;
 
-    public Supplier(String name, Product product) {
+    public Supplier(String name, List<Product> productList) {
         this.name = name;
-        this.product = product;
+        this.productList = productList;
     }
 
     public String getName() {
         return name;
     }
 
-    public Product getProduct() {
-        return product;
+    public List<Product> getProductList() {
+        return productList;
     }
 }

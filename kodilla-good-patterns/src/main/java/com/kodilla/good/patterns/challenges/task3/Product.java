@@ -4,12 +4,10 @@ public class Product {
 
     private String type;
     private int amount;
-    private double price;
 
-    public Product(String type, int amount, double price) {
+    public Product(String type, int amount) {
         this.type = type;
         this.amount = amount;
-        this.price = price;
     }
 
     public String getType() {
@@ -20,7 +18,9 @@ public class Product {
         return amount;
     }
 
-    public double getPrice() {
-        return price;
+    @Override
+    public String toString() {
+        return "|Produkt: " + type +
+                ", ilość: " + amount;
     }
 }
