@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges.task4;
+package com.kodilla.good.patterns.challenges.task5;
 
 public class Flight {
 
@@ -38,9 +38,8 @@ public class Flight {
 
     @Override
     public String toString() {
-        return "Flight{" +
-                "departure airport='" + departureAirport + '\'' +
-                ", arrival airport='" + arrivalAirport + '\'' +
+        return  "{lotnisko wylotu ='" + departureAirport + '\'' +
+                ", lotnisko przylotu ='" + arrivalAirport + '\'' +
                 '}';
     }
 }
