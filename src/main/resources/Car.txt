@@ -1,0 +1,23 @@
+{
+    "carName":"Avensis",
+    "carBrand":"Toyota",
+    "carSeats":[
+        "seat1":{
+            "material":"Leather",
+            "color":"Grey"
+        },
+        "seat2":{
+            "material":"Leather",
+            "color":"Grey"
+        },
+        "seat3":{
+            "material":"Leather",
+            "color":"Black"
+        },
+        "seat4":{
+            "material":"Leather",
+            "color":"Black"
+        }
+    ],
+    "engineCapacity":"2.0"
+}
