@@ -44,6 +44,7 @@ public class InvoiceDaoTestSuite {
         item3.setInvoice(invoice);
         item4.setInvoice(invoice);
         //When
+        invoice.setNumber("1");
         invoiceDao.save(invoice);
         int id = invoice.getId();
         //Then
